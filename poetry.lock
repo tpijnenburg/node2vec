@@ -50,21 +50,23 @@ pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
 name = "gensim"
-version = "0.13.3"
+version = "3.7.3"
 description = "Python framework for fast Vector Space Modelling"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-numpy = ">=1.3"
-scipy = ">=0.7.0"
+numpy = ">=1.11.3"
+scipy = ">=0.18.1"
 six = ">=1.5.0"
-smart-open = ">=1.2.1"
+smart-open = ">=1.7.0"
 
 [package.extras]
 distributed = ["Pyro4 (>=4.27)"]
-wmd = ["pyemd (>=0.2.0)"]
+docs = ["pytest", "pytest-rerunfailures", "mock", "cython", "pyemd", "testfixtures", "scikit-learn", "Morfessor (2.0.2a4)", "python-Levenshtein (>=0.10.2)", "visdom (>=0.1.8,<0.1.8.7 || >0.1.8.7)", "Pyro4 (>=4.27)", "sphinx", "sphinxcontrib-napoleon", "plotly", "pattern (<=2.6)", "sphinxcontrib.programoutput"]
+test = ["pytest", "pytest-rerunfailures", "mock", "cython", "pyemd", "testfixtures", "scikit-learn", "Morfessor (2.0.2a4)", "python-Levenshtein (>=0.10.2)", "visdom (>=0.1.8,<0.1.8.7 || >0.1.8.7)"]
+test-win = ["pytest", "pytest-rerunfailures", "mock", "cython", "pyemd", "testfixtures", "scikit-learn", "Morfessor (2.0.2a4)", "python-Levenshtein (>=0.10.2)", "visdom (>=0.1.8,<0.1.8.7 || >0.1.8.7)"]
 
 [[package]]
 name = "idna"
@@ -197,7 +199,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "urllib3"
-version = "1.26.1"
+version = "1.26.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 category = "main"
 optional = false
@@ -223,7 +225,7 @@ testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "3.7.9"
-content-hash = "ca08f4d61fc37635b544f614f1ef81fb2648a411f682bc9ab000ca67d6428024"
+content-hash = "687e83b3e42bb970bb453a867faa630ad7745dde809c829200d829cac7e778a6"
 
 [metadata.files]
 autopep8 = [
@@ -246,18 +248,21 @@ flake8 = [
     {file = "flake8-3.8.4.tar.gz", hash = "sha256:aadae8761ec651813c24be05c6f7b4680857ef6afaae4651a4eccaef97ce6c3b"},
 ]
 gensim = [
-    {file = "gensim-0.13.3-cp27-cp27m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:0b5596a787df19511e9d448166e3a68563838a99b5c3e3ede9aa34fcb2b5e6a1"},
-    {file = "gensim-0.13.3-cp27-cp27m-win32.whl", hash = "sha256:e5312790a1adc7327dd185a9c7dc2fbb875d9d3d2b085c7c199ec9693b4b68ba"},
-    {file = "gensim-0.13.3-cp27-cp27m-win_amd64.whl", hash = "sha256:e90e8dc06c242626df75a472663feb5e78606b4c5f7dcdad621b35a6137eb604"},
-    {file = "gensim-0.13.3-cp34-cp34m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:bdff5e91527960eee57d79755e87620430f475ba27aeee500a2697ee1e897aaa"},
-    {file = "gensim-0.13.3-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:d5df963c81808efb372cc6bfb22c7b272a5abecb864c48c35e17aa5d01eabd15"},
-    {file = "gensim-0.13.3-cp35-cp35m-win32.whl", hash = "sha256:7c09c6fddf9554542e40038998be06a8cb18680b66c846cc6300c5dcc1db0b84"},
-    {file = "gensim-0.13.3-cp35-cp35m-win_amd64.whl", hash = "sha256:c8fc121998195809f4454b0fad479d7df32b64e036675fb5644aef257937f5de"},
-    {file = "gensim-0.13.3.tar.gz", hash = "sha256:39fa20796f25709c0917f109e4d65755c92e878cd5f62417e20ef35f97a09a81"},
-    {file = "gensim-0.13.3.win-amd64-py2.7.exe", hash = "sha256:6c5fa44539986ee2e208f82b2ca8b2751457cd982528d776d7e000d9b72c61b6"},
-    {file = "gensim-0.13.3.win-amd64-py3.5.exe", hash = "sha256:2edc3f80b86888650764a41ce17818e496c5ee04ee4b9debc245fb089644007a"},
-    {file = "gensim-0.13.3.win32-py2.7.exe", hash = "sha256:09c83972e3259d937e6fd95adbe6026b2b1112041745dae3d279f451bbbe5833"},
-    {file = "gensim-0.13.3.win32-py3.5.exe", hash = "sha256:807d04ed91b53a4467d6257c790fff8bbc9d901ea163ca3df91ec1dc0a9a5846"},
+    {file = "gensim-3.7.3-cp27-cp27m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:1cd2b67366167a03ecc289b3065140edb9bd9820ee3323bd8786d76edf3c09ca"},
+    {file = "gensim-3.7.3-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:319777c2b0e5b37a2f1780e484257133f15f26d9cc1ab5740d2df00f87fa9a7d"},
+    {file = "gensim-3.7.3-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:16990f0c6ea20c9ccad91f051af42921b902935e9fdb9e077103562721b45162"},
+    {file = "gensim-3.7.3-cp27-cp27mu-manylinux1_i686.whl", hash = "sha256:af5e401ce0a978707911f2c5392e256bad2dd271cb4ed001a54ded4a6bc0542a"},
+    {file = "gensim-3.7.3-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:16d21e0034a7d100832e4a3ad52a72ab5b46b2e78042da1f121b83af71574ac8"},
+    {file = "gensim-3.7.3-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:2fd05a4ef53d3b82056da61a9b4aaff1ccacecc7ab323dc99981e6537396efad"},
+    {file = "gensim-3.7.3-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:c7ea53afeaaf1f7e0040229e9fac6357bd8e045750843b054ab6abdfbcc53efb"},
+    {file = "gensim-3.7.3-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:3fdd8b57221e4cbf951d34657a63731dd601a21df593f653f0e449b1abb9d657"},
+    {file = "gensim-3.7.3-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:89a95d662efd41829a7c43fad3657c1b4133df5c3a58e088f8cf07b78c011519"},
+    {file = "gensim-3.7.3-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:2191d664471d948f7d6262138777a18d4b5ebaa6c67af970a0af4d94b26548a1"},
+    {file = "gensim-3.7.3-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:b069f367744b3a315c5170ff5122664380eef188a911c94d1fe264a7984c9af8"},
+    {file = "gensim-3.7.3-cp37-cp37m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:48ffbc762ea9813f11ef02b26961f5ae48a8ce3e72a22fa9a03cecbe44b8fef6"},
+    {file = "gensim-3.7.3-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:593ec35a2dc96d19ba4e4e729dbb57838ce12a351f17491b71b9186509a868ef"},
+    {file = "gensim-3.7.3-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:e72962139f26194fcb8c44adaebca86f167db57f5214b80eb3126a737a3a914f"},
+    {file = "gensim-3.7.3.tar.gz", hash = "sha256:621fe72ee1bb0e16008c34f9f5ca6168bbfc82fc85907f7254974776e482e156"},
 ]
 idna = [
     {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"},
@@ -357,8 +362,8 @@ toml = [
     {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
 ]
 urllib3 = [
-    {file = "urllib3-1.26.1-py2.py3-none-any.whl", hash = "sha256:61ad24434555a42c0439770462df38b47d05d9e8e353d93ec3742900975e3e65"},
-    {file = "urllib3-1.26.1.tar.gz", hash = "sha256:097116a6f16f13482d2a2e56792088b9b2920f4eb6b4f84a2c90555fb673db74"},
+    {file = "urllib3-1.26.2-py2.py3-none-any.whl", hash = "sha256:d8ff90d979214d7b4f8ce956e80f4028fc6860e4431f731ea4a8c08f23f99473"},
+    {file = "urllib3-1.26.2.tar.gz", hash = "sha256:19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"},
 ]
 zipp = [
     {file = "zipp-3.4.0-py3-none-any.whl", hash = "sha256:102c24ef8f171fd729d46599845e95c7ab894a4cf45f5de11a44cc7444fb1108"},
