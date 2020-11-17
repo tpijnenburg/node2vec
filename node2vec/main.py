@@ -112,6 +112,9 @@ def learn_embeddings(walks):
 
     output_path = Path(args.output)
     mkdir(output_path.parent)
+
+    now = datetime.now().strftime("%H:%M:%S")
+    print("{} | Saving to file...".format(now))
     model.wv.save_word2vec_format(output_path)
 
     return
