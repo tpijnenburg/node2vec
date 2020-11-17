@@ -14,6 +14,21 @@ import numpy as np
 import networkx as nx
 import node2vec
 from gensim.models import Word2Vec
+from datetime import datetime
+from pathlib import Path
+
+
+def mkdir(directory: str or Path, parents=True):
+    """ Makes a directory after checking whether it already exists.
+
+        Parameters:
+            directory (str | Path): The name of the directory to be created.
+            parents (boolean): If True, then parent directories are created 
+                        as well
+    """
+    path_dir = Path(directory)
+    if not path_dir.exists():
+        path_dir.mkdir(parents=parents)
 
 
 def parse_args():
@@ -94,7 +109,10 @@ def learn_embeddings(walks):
     walks = [list(map(str, walk)) for walk in walks]
     model = Word2Vec(walks, size=args.dimensions, window=args.window_size,
                      min_count=0, sg=1, workers=args.workers, iter=args.iter)
-    model.wv.save_word2vec_format(args.output)
+
+    output_path = Path(args.output)
+    mkdir(output_path.parent)
+    model.wv.save_word2vec_format(output_path)
 
     return
 
@@ -103,15 +121,24 @@ def main(args):
     '''
     Pipeline for representational learning for all nodes in a graph.
     '''
-    print("Reading data...")
+    now = datetime.now().strftime("%H:%M:%S")
+    print("{} | Reading data...".format(now))
     nx_G = read_graph()
-    print("Building graph...")
+
+    now = datetime.now().strftime("%H:%M:%S")
+    print("{} | Building graph...".format(now))
     G = node2vec.Graph(nx_G, args.directed, args.p, args.q)
-    print("Computing transition probs...")
+
+    now = datetime.now().strftime("%H:%M:%S")
+    print("{} | Computing transition probs...".format(now))
     G.preprocess_transition_probs()
-    print("Simulating walks...")
+
+    now = datetime.now().strftime("%H:%M:%S")
+    print("{} | Simulating walks...".format(now))
     walks = G.simulate_walks(args.num_walks, args.walk_length)
-    print("Learning embeddings...")
+
+    now = datetime.now().strftime("%H:%M:%S")
+    print("{} | Learning embeddings...".format(now))
     learn_embeddings(walks)
 
 
